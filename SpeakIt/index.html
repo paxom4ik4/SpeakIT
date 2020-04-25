@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <title>Speak It</title>
+</head>
+<body>
+
+    <section id="start-screen"></section>
+    <section id="cards" class="close">
+    <div class="switcher">
+        <nav class="navigation">
+            <span class="nav-item active-nav" id="first">1</span>
+            <span class="nav-item" id="second">2</span>
+            <span class="nav-item" id="third">3</span>
+            <span class="nav-item" id="fourth">4</span>
+            <span class="nav-item" id="fifth">5</span>
+            <span class="nav-item" id="six">6</span>
+        </nav>
+    </div>
+    <div class="stars">
+        
+    </div>
+    <div class="chosen-card-container">
+        <div class="chosen-card">
+            <img class="chosen-card-image" src="img/blank.jpg">
+            <p class="chosen-card-translation"></p>
+            <p class="speech-recognition-text"></p>
+        </div>
+    </div>
+    </section>
+    <section id="stat"></section>
+
+    <!-- constants -->
+    <script src="constants/words.js"></script>
+    <script src="constants/root.js"></script>
+
+    <!-- Sctipt -->
+    <script src="js/script.js"></script>
+
+    <!-- Cards -->
+    <script src="components/Cards/Cards.js"></script>
+    <link rel="stylesheet" href="components/Cards/Cards.css">
+
+    <!-- Stat -->
+    <script src="components/Stat/Stat.js"></script>
+    <link rel="stylesheet" href="components/Stat/Stat.css">
+</body>
+</html>
