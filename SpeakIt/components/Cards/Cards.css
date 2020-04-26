@@ -60,6 +60,7 @@
     text-align: right;
     width: 200px;
     height: 100px;
+    font-size: 18px;
 }
 .word {
     position: absolute;
@@ -72,7 +73,7 @@
     right: 10px;  
 }
 .card:hover {
-    cursor: pointer;
+    cursor: pointer;    
     font-weight: bold;
 }
 svg{
@@ -111,7 +112,74 @@ svg{
 
 .correct{
     border: 2px solid rgba(21, 255, 0, 0.507);
-    background-color: rgba(21, 255, 0, 0.055);
+    background-color: rgba(21, 255, 0, 0.308);
+}
+.hide{
+    display: none;
+}
+.mistakes-span{
+    text-align: center;
+    width: 200px;   
+    font-family: monospace;
+    font-size: 14px;
+    color: rgb(0, 0, 0);
+}
+.correct-words{
+    margin-left: 18px;
+    text-align: center;
+    width: 200px;
+    font-family: monospace;
+    font-size: 14px;
+}
+/* stat container */
+.stat-container{
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 50px auto;
+    align-items: center;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.stat-card {
+    cursor: pointer;
+    font-size: 20px;
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    padding: 5px;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: right;
+    width: 200px;
+    height: 100px;
+    border: 3px solid rgb(255, 255, 255);
+}
+.stat-card:hover{
+    box-shadow: 0 0 3px 3px rgb(0,0,0);
+}
+.stat-back{
+    background-image: url(../../img/background.jpg);
+}
+.button-stat{
+    margin-left: 18px;
+    font-family: monospace;
+    border-radius: 10px;
+    margin-top: 50px;
+    width: 200px;
+    height: 60px;
+    transition: .2s;
+}
+.stat-buttons{
+    display: flex;
+}
+.mistakes-correct{
+    margin-top: 50px;
+    display: flex;  
+}
+.button-stat:hover{
+    cursor: pointer;
+    opacity: 0.8;
+    transition: .2s;
 }
 
 @media (max-width: 425px){
