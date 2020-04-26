@@ -7,6 +7,8 @@
 
 /* Start Screen */
 #start-screen{
+    z-index: 100;
+    position: fixed;
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -33,7 +35,7 @@
 }
 
 .start-screen-button {
-    margin-top: 20px;
+    margin-bottom: 20px;
     font-family: fantasy;
     background-color: teal;
     border: 0;
@@ -62,4 +64,29 @@
 .close{
     opacity: 0;
 }
-
+#statistic{
+    text-align: left;
+    display: grid;
+    grid-template-columns: 100%;
+}
+.statistic-card{
+    cursor: pointer;
+    font-size: 16px;
+    position: relative;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-left: 10px;
+    border-radius: 10px;
+    text-align: right;
+    width: 90%;
+    height: 40px;
+    border: 3px solid rgb(255, 255, 255);
+    border-bottom: 1px solid black;
+    border-radius: 0;
+}
+.stat-word{
+    top: 0;
+    left: 0;
+    position: absolute;
+    text-align: left;
+    
+}
