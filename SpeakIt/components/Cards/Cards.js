@@ -3,68 +3,136 @@ const chosenCardTranslation = document.querySelector(".chosen-card-translation")
 const cardsContainer = document.createElement("div");
 cardsContainer.classList.add("cards-container");
 
+const switcher = document.querySelector(".switcher");
+
 
 // Render Cards
 let firstCategoryCard = '';
 for(let i = 0; i < 10; i++){
     firstCategoryCard += `
     <div class="card" src="${words[0][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[0][i].word}</span>
         <span class="transcription">${words[0][i].transcription}</span>
         <audio src="${words[0][i].audio}" id="card-audio"></audio>
     </div>
     `
 }
-let secondCategoerCard = '';
+let firstCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    firstCategoryCard2 += `
+    <div class="card" src="${words[0][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[0][i].word}</span>
+        <span class="transcription">${words[0][i].transcription}</span>
+        <audio src="${words[0][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let secondCategoryCard = '';
 for(let i = 0; i < 10; i++){
-    secondCategoerCard += `
+    secondCategoryCard += `
     <div class="card" src="${words[1][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[1][i].word}</span>
         <span class="transcription">${words[1][i].transcription}</span>
         <audio src="${words[1][i].audio}" id="card-audio"></audio>
     </div>
     `
 }
-let thirdCategoerCard = '';
+let secondCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    secondCategoryCard2 += `
+    <div class="card" src="${words[1][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[1][i].word}</span>
+        <span class="transcription">${words[1][i].transcription}</span>
+        <audio src="${words[1][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let thirdCategoryCard = '';
 for(let i = 0; i < 10; i++){
-    thirdCategoerCard += `
+    thirdCategoryCard += `
     <div class="card" src="${words[2][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[2][i].word}</span>
         <span class="transcription">${words[1][i].transcription}</span>
         <audio src="${words[2][i].audio}" id="card-audio"></audio>
     </div>
     `
 }
-let fourthCategoerCard = '';
+let thirdCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    thirdCategoryCard2 += `
+    <div class="card" src="${words[2][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[2][i].word}</span>
+        <span class="transcription">${words[1][i].transcription}</span>
+        <audio src="${words[2][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let fourthCategoryCard = '';
 for(let i = 0; i < 10; i++){
-    fourthCategoerCard += `
+    fourthCategoryCard += `
     <div class="card" src="${words[3][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[3][i].word}</span>
         <span class="transcription">${words[3][i].transcription}</span>
         <audio src="${words[3][i].audio}" id="card-audio"></audio>
     </div>
     `
 }
-let fifthhCategoerCard = '';
+let fourthCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    fourthCategoryCard2 += `
+    <div class="card" src="${words[3][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[3][i].word}</span>
+        <span class="transcription">${words[3][i].transcription}</span>
+        <audio src="${words[3][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let fifthCategoryCard = '';
 for(let i = 0; i < 10; i++){
-    fifthhCategoerCard += `
+    fifthCategoryCard += `
     <div class="card" src="${words[4][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[4][i].word}</span>
         <span class="transcription">${words[4][i].transcription}</span>
         <audio src="${words[4][i].audio}" id="card-audio"></audio>
     </div>
     `
 }
-let sixhCategoerCard = '';
+let fifthCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    fifthCategoryCard2 += `
+    <div class="card" src="${words[4][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[4][i].word}</span>
+        <span class="transcription">${words[4][i].transcription}</span>
+        <audio src="${words[4][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let sixCategoryCard = '';
 for(let i = 0; i < 10; i++){
-    sixhCategoerCard += `
+    sixCategoryCard += `
     <div class="card" src="${words[5][i].image}">
-        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="rgb(170, 170, 170)" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
+        <span class="word">${words[5][i].word}</span>
+        <span class="transcription">${words[5][i].transcription}</span>
+        <audio src="${words[5][i].audio}" id="card-audio"></audio>
+    </div>
+    `
+}
+let sixCategoryCard2 = '';
+for(let i = 10; i < 20; i++){
+    sixCategoryCard2 += `
+    <div class="card" src="${words[5][i].image}">
+        <span class="audio-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 90 35"><path fill="black" d="M15.788 13.007a3 3 0 110 5.985c.571 3.312 2.064 5.675 3.815 5.675 2.244 0 4.064-3.88 4.064-8.667 0-4.786-1.82-8.667-4.064-8.667-1.751 0-3.244 2.363-3.815 5.674zM19 26c-3.314 0-12-4.144-12-10S15.686 6 19 6s6 4.477 6 10-2.686 10-6 10z" fill-rule="evenodd"></path></svg></span>
         <span class="word">${words[5][i].word}</span>
         <span class="transcription">${words[5][i].transcription}</span>
         <audio src="${words[5][i].audio}" id="card-audio"></audio>
@@ -75,6 +143,23 @@ for(let i = 0; i < 10; i++){
 cardsContainer.innerHTML = `
     ${firstCategoryCard}
 `
+
+// categoryes parts
+
+let firstCategoryPart = [firstCategoryCard, firstCategoryCard2];
+let secondCategoryPart = [secondCategoryCard, secondCategoryCard2];
+let thirdCategoryPart = [thirdCategoryCard, thirdCategoryCard2];
+let fourthCategoryPart = [fourthCategoryCard, fourthCategoryCard2];
+let fifthCategoryPart = [fifthCategoryCard, fifthCategoryCard2];
+let sixCategoryPart = [sixCategoryCard, sixCategoryCard2];
+
+function randomInteger(min, max) {
+    let rand = min + Math.random() * (max + 1 - min);
+    return Math.floor(rand);
+}
+
+
+// Navigation
 const navLinks = document.querySelectorAll(".nav-item");
 
 const navigation = document.querySelector(".navigation");
@@ -103,8 +188,10 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
+
             cardsContainer.innerHTML = `
-                ${firstCategoryCard}
+                ${firstCategoryPart[i]}
             `
 
             cardsContainer.addEventListener('click', divHandling);
@@ -129,8 +216,10 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
+
             cardsContainer.innerHTML = `
-                ${secondCategoerCard}
+                ${secondCategoryPart[i]}
             `
         }
         else if (chosenCategory == 3){
@@ -153,8 +242,10 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
+
             cardsContainer.innerHTML = `
-                ${thirdCategoerCard}
+                ${thirdCategoryPart[i]}
             `
         }
         else if (chosenCategory == 4){
@@ -177,8 +268,10 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
+
             cardsContainer.innerHTML = `
-                ${fourthCategoerCard}
+                ${fourthCategoryPart[i]}
             `
         }
         else if (chosenCategory == 5){
@@ -201,8 +294,9 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
             cardsContainer.innerHTML = `
-                ${fifthhCategoerCard}
+                ${fifthCategoryPart[i]}
             `
         }
         else if (chosenCategory == 6){
@@ -226,8 +320,10 @@ navigation.addEventListener('click', (e)=>{
             })
             target.classList.add('active-nav');
 
+            let i = randomInteger(0,1);
+
             cardsContainer.innerHTML = `
-                ${sixhCategoerCard}
+                ${sixCategoryPart[i]}
             `
         }
     }
@@ -245,9 +341,7 @@ buttons.innerHTML = `
     <button class="results-button button">Results</button>
 `;
 
-
 ROOT_CARDS.append(cardsContainer, buttons);
-
 
 // let urlText = ;
 // Translation
@@ -277,7 +371,6 @@ function divHandling(event){
     cards.forEach(elem =>{
         elem.classList.remove("active");
     })
-    console.log(cards);
     targetDiv.classList.add("active");
     let cardImg = targetDiv.getAttribute("src");
     chosenCardImage.setAttribute("src", cardImg);
@@ -315,7 +408,6 @@ function voiseStart(){
 
     let pageWords = document.querySelectorAll(".word");
     let pageWordsText = [];
-    console.log(pageWordsText);
 
 
     pageWords.forEach(elem =>{
@@ -367,6 +459,8 @@ function voiseStart(){
 
 startButton.addEventListener('click', voiseStart);
 
+// restart
+
 restartButton.addEventListener('click', ()=>{
     let cards = document.querySelectorAll(".card");
     let starsContainer = document.querySelector(".stars");
@@ -382,4 +476,117 @@ restartButton.addEventListener('click', ()=>{
     starsContainer.innerHTML = '';
 })
 
+const buttonsContainer = document.querySelector(".buttons-container");
 
+const resultButton = document.querySelector(".results-button");
+
+resultButton.addEventListener('click', StatAppend);
+
+const mistakesCorrect = document.querySelector(".mistakes-correct");
+const statButtons = document.querySelector(".stat-buttons");
+
+function StatAppend(){
+    mistakesCorrect.classList.remove("hide");
+    mistakesCorrect.classList.add("mistakes-correct");
+
+    let body = document.querySelector("body");
+    body.classList.add("stat-back");
+    let starsContainer = document.querySelector(".stars");
+    let mistakesSpan = document.createElement("span");
+    mistakesSpan.classList.add("mistakes-span");
+    let correctWords = document.createElement("span");
+    correctWords.classList.add("correct-words");
+    mistakesCorrect.append(mistakesSpan, correctWords);
+
+    let correctWordsAll = document.querySelectorAll(".correct");
+    let correctWordsNumber = correctWordsAll.length;
+    correctWords.innerText = "Количество слов, которые вы знаете: " + correctWordsNumber;
+    
+    let wrongWordsAll = document.querySelectorAll(".card");
+    let wrongWordsNumber = wrongWordsAll.length - correctWordsNumber;
+    mistakesSpan.innerText = "Количество слов, которые вы не знаете: " + wrongWordsNumber;
+    
+    chosenCardContainer.classList.add("hide");
+    switcher.classList.add("hide");
+    buttonsContainer.classList.add("hide");
+    let cards = document.querySelectorAll(".card");    
+    cardsContainer.classList.add("stat-container");
+    cards.forEach(elem =>{
+        elem.classList.remove("card");
+        elem.classList.add("stat-card");
+    })
+    starsContainer.classList.add("hide");
+
+    let returnButton = document.createElement("button");
+    let newGameButton = document.createElement("button");
+    returnButton.innerText = "Return";
+    newGameButton.innerText = "New Game";
+    returnButton.classList.add("button-stat");
+    newGameButton.classList.add("button-stat");
+
+    statButtons.classList.remove("hide");
+    statButtons.prepend(returnButton, newGameButton);
+
+    returnButton.addEventListener('click', ()=>{
+        body.classList.remove("stat-back");
+
+        starsContainer.classList.remove("hide");
+        // cardsContainer.remove(mistakesSpan);
+        // cardsContainer.remove(correctWords);
+        chosenCardContainer.classList.remove("hide");
+        switcher.classList.remove("hide");
+        statButtons.classList.add("hide");
+        statButtons.removeChild(returnButton);
+        statButtons.removeChild(newGameButton);    
+        cardsContainer.classList.remove("stat-container");
+        cards.forEach(elem =>{
+            elem.classList.remove("stat-card");
+            elem.classList.add("card");   
+        })
+        buttonsContainer.classList.remove("hide");
+        mistakesCorrect.classList.add("hide");
+        mistakesCorrect.removeChild(mistakesSpan);
+        mistakesCorrect.removeChild(correctWords);
+        
+        speechRecognitionText.innerText = '';
+        chosenCardTranslation.innerText = '';   
+        chosenCardImage.setAttribute("src", "img/blank.jpg");
+
+        cards.forEach(elem =>{
+            elem.classList.remove("active");
+            elem.classList.add("card");
+        })
+    })
+
+    newGameButton.addEventListener('click', ()=>{
+        body.classList.remove("stat-back");
+
+        starsContainer.classList.remove("hide");
+        // cardsContainer.remove(mistakesSpan);
+        // cardsContainer.remove(correctWords);
+        chosenCardContainer.classList.remove("hide");
+        switcher.classList.remove("hide");
+        statButtons.classList.add("hide");
+        statButtons.removeChild(returnButton);
+        statButtons.removeChild(newGameButton);    
+        cardsContainer.classList.remove("stat-container");
+        cards.forEach(elem =>{
+            elem.classList.remove("stat-card");
+            elem.classList.add("card");   
+        })
+        buttonsContainer.classList.remove("hide");
+        mistakesCorrect.classList.add("hide");
+        mistakesCorrect.removeChild(mistakesSpan);
+        mistakesCorrect.removeChild(correctWords);
+        
+        speechRecognitionText.innerText = '';
+        chosenCardTranslation.innerText = '';   
+        chosenCardImage.setAttribute("src", "img/blank.jpg");
+        starsContainer.innerHTML = '';
+        cards.forEach(elem =>{
+            elem.classList.remove("active");
+            elem.classList.remove("correct");
+            elem.classList.add("card");
+        })  
+    })
+}
